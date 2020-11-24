@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Country>
+@{
+    ViewData["Title"] = "All countries in Db";
+}
+<h1 class="text-center">@ViewData["Title"]</h1>
+<br/><br/>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Numeric Code</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Area, km&#178;</th>
+            <th scope="col">Population, hum.</th>
+            <th scope="col">Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var country in Model)
+        {
+            <tr>
+                <td>@country.Name</td>
+                <td>@country.NumericCode</td>
+                <td>@country.City.Name</td>
+                <td>@country.Area</td>
+                <td>@country.Population</td>
+                <td>@country.Region.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-danger float-right" asp-controller="Home" asp-action="Index">
+    Back
+</a>

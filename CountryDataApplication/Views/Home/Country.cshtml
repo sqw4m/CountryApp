@@ -1,0 +1,60 @@
+﻿@model CountryResponse
+@{
+    ViewData["Title"] = "Found country data";
+}
+<h1 class="text-center">@ViewData["Title"]</h1>
+<br/><br/>
+<form asp-controller="Home" asp-action="Save" method="post">
+    <div class="row">
+        <div class="col input-group mb-3 text-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-secondary text-white" id="inputGroup-sizing-default">Name</span>
+            </div>
+            <input type="text" asp-for="Name" class="form-control" value="@Model.Name" readonly>
+        </div>
+        <div class="col input-group mb-3 text-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-secondary text-white" id="inputGroup-sizing-default">Numeric Code</span>
+            </div>
+            <input type="text" asp-for="NumericCode" class="form-control" value="@Model.NumericCode" readonly>
+        </div>
+        <div class="col input-group mb-3 text-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-secondary text-white" id="inputGroup-sizing-default">Capital</span>
+            </div>
+            <input type="text" asp-for="Capital" class="form-control" value="@Model.Capital" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col input-group mb-3 text-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-secondary text-white" id="inputGroup-sizing-default">Area</span>
+            </div>
+            <input type="text" asp-for="Area" class="form-control" value="@Model.Area" readonly>
+            <div class="input-group-append">
+                <span class="input-group-text bg-secondary text-white">km&#178;</span>
+            </div>
+        </div>
+        <div class="col input-group mb-3 text-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-secondary text-white" id="inputGroup-sizing-default">Population</span>
+            </div>
+            <input type="text" asp-for="Population" class="form-control" value="@Model.Population" readonly>
+            <div class="input-group-append">
+                <span class="input-group-text bg-secondary text-white">hum.</span>
+            </div>
+        </div>
+        <div class="col input-group mb-3 text-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-secondary text-white" id="inputGroup-sizing-default">Region</span>
+            </div>
+            <input type="text" asp-for="Region" class="form-control" value="@Model.Region" readonly>
+        </div>
+    </div>
+    <div class="btn-group float-right" role="group" aria-label="Basic example">
+        <input type="submit" class="span3 btn btn-primary" value="Save" input />
+        <a class="span3 btn btn-danger" asp-controller="Home" asp-action="Index">
+            Back
+        </a>
+    </div>
+</form>

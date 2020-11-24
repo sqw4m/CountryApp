@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <br /><br />
+    <form asp-controller="Home" asp-action="Country" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <input class="btn btn-primary" type="submit" value="Search" />
+            </div>
+            <input name="country" type="text" class="form-control" placeholder="Country name..." aria-label="" aria-describedby="basic-addon1">
+        </div>
+    </form>
+</div>
+<p>Enter the country name and press <b>Search</b></p>

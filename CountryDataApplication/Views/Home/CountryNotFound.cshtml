@@ -1,0 +1,8 @@
+﻿@model (int, string)
+@{
+    ViewData["Title"] = "Country not found";
+}
+<h3 class="text-center">Country <b class="text-danger">@Model.Item2</b> not found</h3>
+<a class="btn btn-danger float-right" asp-controller="Home" asp-action="Index">
+    Back
+</a>
