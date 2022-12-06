@@ -89,7 +89,6 @@ namespace CountryDataApplication.Controllers
 
                 Context.Countries.Add(country);
             }
-
             Context.SaveChanges();
 
             return RedirectToAction("Countries");
