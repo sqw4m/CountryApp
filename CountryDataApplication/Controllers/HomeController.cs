@@ -45,6 +45,7 @@ namespace CountryDataApplication.Controllers
                 JArray jsonArray = JArray.Parse(response.Content);
                 return View(jsonArray[0].ToObject<CountryResponse>());
             }
+
             return RedirectToAction("CountryNotFound", new { name = country });
         }
 
@@ -89,7 +90,7 @@ namespace CountryDataApplication.Controllers
                 Context.Countries.Add(country);
             }
             Context.SaveChanges();
-
+            
             return RedirectToAction("Countries");
         }
 
@@ -97,6 +98,7 @@ namespace CountryDataApplication.Controllers
         public IActionResult CountryNotFound(string name)
         {
             var t = (1, name);
+
             return View(t);
         }
 
