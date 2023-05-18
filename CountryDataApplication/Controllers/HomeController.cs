@@ -45,6 +45,7 @@ namespace CountryDataApplication.Controllers
                 JArray jsonArray = JArray.Parse(response.Content);
                 return View(jsonArray[0].ToObject<CountryResponse>());
             }
+			
             return RedirectToAction("CountryNotFound", new { name = country });
         }
 
